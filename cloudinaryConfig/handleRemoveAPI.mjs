@@ -4,6 +4,7 @@ import cloudinaryConfig from "./config.mjs";
 cloudinary.config(cloudinaryConfig)
 
 export const removeImages = (images) => {
+
     images.forEach(image => {
         let publicId = "uploads" + image.split("uploads")[1].split(".")[0];
 

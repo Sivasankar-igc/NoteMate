@@ -7,6 +7,7 @@ import { generateDate } from "../../utils/generateDate.mjs";
 import postCol from "../../Models/postModel.mjs";
 import dotenv from "dotenv"
 import allPostCol from "../../Models/generalPostModel.mjs";
+import { removeImages } from "../../cloudinaryConfig/handleRemoveAPI.mjs";
 
 dotenv.config()
 
@@ -180,8 +181,17 @@ export const deactiveAccount = async (req, res) => {
         const response = await userCol.findByIdAndDelete(_id);
 
         if (response) {
-            await postCol.deleteOne({ "userDetails.userId": _id })
             await allPostCol.deleteMany({ "userDetails.userId": _id })
+            const removeUserPost = await postCol.findOneAndDelete({ "userDetails.userId": _id });
+
+            if (removeUserPost) {
+                removeUserPost.posts.forEach(post => {
+                    removeImages(post.images)
+                })
+
+                res.clearCookie("notemate");
+            }
+
             res.status(200).send(response !== null && response !== undefined)
         }
     } catch (error) {
