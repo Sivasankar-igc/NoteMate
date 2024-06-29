@@ -23,6 +23,11 @@ export default async (req, res) => {
                     message: { user, post }
                 })
             }
+        } else {
+            res.status(200).json({
+                status: false,
+                message: { user: null, post: { posts: [] } }
+            })
         }
     } catch (error) {
         console.error(`Server error : retrieving user detatils from cookies : ${error}`)

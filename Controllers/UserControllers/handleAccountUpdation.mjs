@@ -1,4 +1,5 @@
 import userCol from "../../Models/userModel.mjs";
+import { removeImages } from "../../cloudinaryConfig/handleRemoveAPI.mjs";
 import { generateEncryptedPassword } from "../../utils/generateEncryptedPassword.mjs";
 
 export const editPassword = async (req, res) => {
@@ -66,5 +67,16 @@ export const editProfilePic = async (req, res) => {
         res.status(200).send(response !== null && response !== undefined)
     } catch (error) {
         console.error(`Server error : editing profile picture --> ${error}`)
+    }
+}
+
+export const removeProfilePic = async (req, res) => {
+    try {
+        const { profilePic } = req.body;
+
+        removeImages([profilePic])
+        res.status(200).send(true)
+    } catch (error) {
+        console.error(`Server error : removing profile picture --> ${error}`)
     }
 }
