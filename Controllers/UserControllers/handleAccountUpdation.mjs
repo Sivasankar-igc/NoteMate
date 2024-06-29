@@ -74,8 +74,12 @@ export const removeProfilePic = async (req, res) => {
     try {
         const { profilePic } = req.body;
 
-        removeImages([profilePic])
-        res.status(200).send(true)
+        if (profilePic) {
+            removeImages([profilePic])
+            res.status(200).send(true)
+        } else {
+            res.status(200).send(true)
+        }
     } catch (error) {
         console.error(`Server error : removing profile picture --> ${error}`)
     }
