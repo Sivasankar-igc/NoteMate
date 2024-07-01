@@ -5,6 +5,7 @@ import { editDescription, editPassword, editProfilePic, editUserDetails, removeP
 import { addComment, addPost, disLikePost, likePost, modifyPost, removePost } from "../Controllers/UserControllers/handlePost.mjs"
 import visitProfile from "../Controllers/UserControllers/visitProfile.mjs"
 import getUserPost from "../Controllers/UserControllers/getUserPost.mjs"
+import handleContactus from "../Controllers/UserControllers/handleContactus.mjs"
 
 const router = express.Router()
 
@@ -32,6 +33,9 @@ router.put("/addComment/:id", addComment)
 
 router.get("/visitProfile",visitProfile)
 router.get("/getUserPost",getUserPost)
+
+// HANDLING CONTACT US
+router.post("/contact", handleContactus)
 
 export { router }
 
