@@ -6,6 +6,7 @@ import { addComment, addPost, disLikePost, likePost, modifyPost, removePost } fr
 import visitProfile from "../Controllers/UserControllers/visitProfile.mjs"
 import getUserPost from "../Controllers/UserControllers/getUserPost.mjs"
 import handleContactus from "../Controllers/UserControllers/handleContactus.mjs"
+import searchUsers from "../Controllers/UserControllers/searchUsers.mjs"
 
 const router = express.Router()
 
@@ -31,12 +32,14 @@ router.put("/dislikePost/:id", disLikePost)
 router.put("/addComment/:id", addComment)
 
 
-router.get("/visitProfile",visitProfile)
-router.get("/getUserPost",getUserPost)
+router.get("/visitProfile", visitProfile)
+router.get("/getUserPost", getUserPost)
 
 // HANDLING CONTACT US
 router.post("/contact", handleContactus)
 
+
+router.get("/search", searchUsers)
 export { router }
 
 // http://example.com/route?key1=value1&key2=value2
