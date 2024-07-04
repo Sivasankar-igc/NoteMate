@@ -1,0 +1,142 @@
+/* searchbar.css */
+.search-bar-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    background-color: #fff;
+    width: calc(100% - 20px);
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.search-bar .fa-close {
+    cursor: pointer;
+}
+
+.searched-users {
+    position: absolute;
+    top: 100%;
+    left: 1%;
+    right: -.9%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-top: none;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    width: 100%;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.user-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-item a {
+    color: #000;
+    text-decoration: none;
+}
+
+.user-item a:hover {
+    text-decoration: underline;
+}
+
+.search-icon-container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-icon {
+    border: none;
+    background-color: transparent;
+    font-size: 18pt;
+}
+
+@media (max-width: 768px) {
+    .search-bar-container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .searched-users {
+        max-height: 200px;
+    }
+
+    .user-item img {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width:600px) {
+    .user-item img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .user-item a {
+        color: #000;
+        text-decoration: none;
+        font-size: 10pt;
+    }
+}
+
+@media (max-width:521px) {
+    .search-bar-container {
+        width: 60%;
+    }
+
+    .search-bar-container .search-bar input {
+        width: 80%;
+    }
+}
+
+@media (max-width:470px) {
+    .search-bar-container {
+        position: absolute;
+        left: 20%;
+    }
+
+    .searched-users {
+        position: fixed;
+        width: 90vw;
+        top: 10%;
+        left: 5%;
+    }
+}
+
+@media (max-width:400px) {
+    .search-icon-container {
+        position: absolute;
+        transform:translateY(-45%);
+        right: 10%;
+    }
+}

@@ -1,0 +1,55 @@
+/* NotFound.css */
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.error-content {
+  text-align: center;
+}
+
+.error-heading {
+  font-size: 5rem;
+  color: #e74c3c;
+  margin-bottom: 20px;
+}
+
+.error-text {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.error-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.error-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.error-link:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .error-heading {
+    font-size: 4rem;
+  }
+
+  .error-text {
+    font-size: 1.2rem;
+  }
+}

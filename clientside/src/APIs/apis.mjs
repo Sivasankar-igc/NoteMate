@@ -27,7 +27,7 @@ export const API = {
     EDIT_PASSWORD: {
         api: "user/editPassword",
         method: "put",
-        description: "the user id will be passed as a parameter to this api to edit password"
+        description: "the user id will be passed as a parameter and oldpassword and newpassword will be passed in the body"
     },
     EDIT_ABOUT: {
         api: "user/editDescription",
@@ -38,6 +38,11 @@ export const API = {
         api: "user/editUserDetails",
         method: "put",
         description: "the user id will be passed as a parameter to this api to edit the details about the user"
+    },
+    REMOVE_PROFILE: {
+        api: "user/removeProfilePic",
+        method: "put",
+        description: "the previous profile pic url will be passed as the parameter before updating the profile picture to remove it from the cloud"
     },
     EDIT_PROFILE: {
         api: "user/editProfilePic",
@@ -73,5 +78,20 @@ export const API = {
         api: "getAllPosts",
         method: "get",
         description: "To get all the posts"
+    },
+    GET_USER_POST: {
+        api: "user/getUserPost",
+        method: "get",
+        description: "the user id and post id will be passed as the query"
+    },
+    CONTACT: {
+        api: "user/contact",
+        method: "post",
+        description: "email, username, message will be passed in body part"
+    },
+    SEARCH_USER:{
+        api:"user/search",
+        method:"get",
+        description:"the username will passed in the query"
     }
 }

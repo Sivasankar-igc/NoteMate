@@ -1,0 +1,84 @@
+/* General styling for the container */
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Styling for the hamburger menu */
+.hamburger-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: white;
+}
+
+.hamburger-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hide sidebar by default */
+.sidebar {
+    display: none;
+    width: calc(100% - 40px);
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Show sidebar when active */
+.sidebar.active {
+    display: block;
+}
+
+.sidebar h2 {
+    color: #ffffff;
+}
+
+.sidebar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 4px;
+}
+
+.sidebar button:hover {
+    background-color: #0056b3;
+}
+
+.main-content {
+    padding: 20px;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .admin-container {
+        flex-direction: row;
+    }
+    .hamburger-menu {
+        display: none;
+    }
+    .sidebar {
+        display: block;
+        width: 20%;
+    }
+    .main-content {
+        width: 80%;
+    }
+}

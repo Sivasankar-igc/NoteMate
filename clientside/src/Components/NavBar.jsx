@@ -3,6 +3,7 @@ import '../CSS//Navbar.css';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { statusCode } from '../utils/statusFile.mjs';
+import SearchBar from './SearchBar';
 // import logo from '../assets/a.jpg'; // Update the path to your logo
 
 const Navbar = () => {
@@ -19,13 +20,14 @@ const Navbar = () => {
             <div className="logo">
                 <img src={`/logo.png`} alt="Notemate Logo" />
             </div>
+            <SearchBar />
             <ul className={isMobile ? "nav-links-mobile" : "nav-links"}>
                 <li><NavLink to="/">Home</NavLink></li>
-                
+
                 {
                     status === statusCode.IDLE
-                    ?<li><NavLink to={`/user_account/?userId=${data._id}`}>My Account</NavLink></li>
-                    :<li><NavLink to="/account/login">Login</NavLink></li>
+                        ? <li><NavLink to={`/user_account/?userId=${data._id}`}>My&nbsp;Account</NavLink></li>
+                        : <li><NavLink to="/account/login">Login</NavLink></li>
                 }
             </ul>
             <div className="hamburger" onClick={handleMenuClick}>

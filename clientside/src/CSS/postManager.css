@@ -1,0 +1,183 @@
+/* Styling for the ProfileManager */
+.profile-manager {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for the PostManager */
+.post-manager {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-manager h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #343a40;
+    position: relative;
+    margin: 20px 0;
+}
+
+.post-manager h4::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 10%;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.post-manager button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+.post-manager button:hover {
+    background-color: #0056b3;
+}
+
+.post-manager .form-group {
+    margin-bottom: 20px;
+}
+
+.post-manager .form-group label {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding: 10px 5px;
+    background-color: #007bff;
+    color: white;
+    width: 150px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11pt;
+    transition: .4s all ease;
+}
+
+.post-manager .form-group label:hover {
+    transform: scale(.96);
+}
+
+/*TAG CONTAINER DESIGN*/
+.post-manager .form-group .tag-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.post-manager .form-group .tag-wrapper .tag-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 30px;
+    position: relative;
+    padding: 0 15px;
+    margin: 5px 10px;
+    background-color: #00ffd7;
+    border-radius: 20px;
+    min-width: 100px;
+}
+
+.post-manager .form-group .tag-wrapper select {
+    width: 150px;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid #c5c0c0;
+    border-radius: 8px;
+}
+
+.post-manager .form-group .tag-wrapper .tag-container label {
+    position: absolute;
+    right: 8%;
+    top: -10%;
+    width: 10px;
+    font-size: 16px;
+    background-color: transparent;
+    color: red;
+}
+
+/*END*/
+
+.post-manager .form-group .carousel div.image-container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+.post-manager .form-group .carousel div.image-container img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: contain;
+}
+
+.post-manager .form-group .carousel div.image-container button {
+    position: absolute;
+    top: 2%;
+    right: 10%;
+    background-color: red;
+    cursor: pointer;
+}
+
+.post-manager .carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.post-manager .carousel-button {
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    transition: .4s all ease;
+}
+
+.post-manager .carousel-button:hover {
+    transform: scale(.93);
+    background-color: #000000ad;
+}
+
+/*DESCRIPTION DESIGN*/
+
+.post-manager .form-group textarea {
+    width: 60%;
+    border: 1px solid black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10pt;
+    -webkit-text-stroke-width: .2pt;
+    letter-spacing: .9pt;
+}
+
+/*END*/
+
+.post-manager form .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.post-manager form .btn button {
+    width: 200px;
+    height: 50px;
+    font-size: 13pt;
+}

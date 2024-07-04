@@ -1,5 +1,4 @@
-/* General styles */
-.signin-container {
+.signin-container  {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,25 +22,25 @@
     margin-bottom: 20px;
 }
 
-.form-group {
+.signin-form .form-group {
     margin-bottom: 15px;
 }
 
-.form-group label {
+.signin-form .form-group label {
     display: block;
     margin-bottom: 5px;
     user-select: none;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.signin-form .form-group input,
+.signin-form .form-group select,
+.signin-form .form-group textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-.form-group select{
+.signin-form .form-group select{
     width: 105%;
 }
 
@@ -63,8 +62,8 @@
     color: #666;
 }
 
-button {
-    width: 100%;
+.signin-container button {
+    width: 106%;
     padding: 10px;
     background-color: #007bff;
     color: white;
@@ -74,21 +73,21 @@ button {
     font-size: 16px;
 }
 
-button:hover {
+.signin-container button:hover {
     background-color: #0056b3;
 }
 
-p {
+.signin-container p {
     margin-top: 10px;
     text-align: center;
 }
 
-p a {
+.signin-container p a {
     color: #007bff;
     text-decoration: none;
 }
 
-p a:hover {
+.signin-container p a:hover {
     text-decoration: underline;
 }
 
@@ -125,18 +124,7 @@ p a:hover {
 }
 
 @media (max-width: 480px) {
-    .signin-form {
-        padding: 20px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: 8px;
-    }
-
-    button {
-        padding: 8px;
-        font-size: 14px;
-    }
+     .signin-form{
+        width: 80%;
+     }
 }

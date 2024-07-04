@@ -1,39 +1,33 @@
+import PostContainer from "./PostContainer";
+import Error from "../Pages/Error";
+
 export default ({ props }) => {
-    const { userPosts: posts, isAdmin, CBMethod } = props;
-    return (
-        posts.length > 0
-            ? posts.map(post => (
-                <section key={post._id}>
-                    {
-                        isAdmin && <button onClick={() => CBMethod(post.generalPostId)}>Delete</button>
-                    }
-                    <div>
-                        <label>Subject Tags</label>
-                        {
-                            post.subjectTags.map((tag, index) => (
-                                <p>{tag}</p>
-                            ))
-                        }
-                    </div>
-                    <div>
-                        <label>Descripton</label>
-                        <p> {post.description}</p>
-                    </div>
-                    <div>
-                        <label>Creation Date</label>
-                        <p>{post.noteCreation.date}</p>
-                    </div>
-                    <div>
-                        {
-                            post.images.map((image, index) => (
-                                <img src={image} key={`${post._id}${index}`} />
-                            ))
-                        }
-                    </div>
-                </section>
-            ))
-            : <>
-                User has not posted yet.
+    const { userId, userDetails, userPosts: posts, isAdmin } = props;
+    if (posts.length > 0) {
+        return (
+            <>
+                {
+                    posts.map(post => (
+                        <PostContainer
+                            userId={userId}
+                            postId={post.generalPostId}
+                            isAdmin={isAdmin}
+                            profilePic={userDetails.profilePic}
+                            username={userDetails.username}
+                            post={post}
+                            showPopUp={null}
+                        />
+                    ))
+                }
             </>
-    )
+        );
+    } else {
+        return (
+            <Error>
+                <div className="error-content">
+                    <p className="error-text">User Has Not Posted Anything.</p>
+                </div>
+            </Error>
+        )
+    }
 }

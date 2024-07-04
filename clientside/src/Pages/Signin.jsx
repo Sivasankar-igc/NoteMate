@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../CSS/signin.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { toast } from "react-toastify";
 
 export default () => {
 
@@ -48,15 +49,15 @@ export default () => {
                         dispatch(userPost({ _id: message._id, posts: [] }))
                         navigate("/")
                     } else {
-                        window.alert(message)
+                        toast(message)
                     }
                 })
                 .catch(err => {
                     console.error(`Signin error : ${err}`)
-                    window.alert("Network connection error")
+                    toast("Network connection error")
                 })
         } else {
-            window.alert("password and confirm password must be same")
+            toast("password and confirm password must be same")
             return;
         }
     }

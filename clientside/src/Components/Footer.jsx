@@ -1,5 +1,8 @@
 import React from 'react';
 import '../CSS/footer.css';
+import { Link } from 'react-router-dom';
+import { faFacebook, faInstagram, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => {
     return (
@@ -20,19 +23,19 @@ const Footer = () => {
                 <div className="footer-section links">
                     <h2>Quick Links</h2>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/services">Services</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </div>
                 <div className="footer-section social">
                     <h2>Follow Us</h2>
                     <div className="social-icons">
-                        <a href="#"><i className="fa fa-facebook"></i></a>
-                        <a href="#"><i className="fa fa-twitter"></i></a>
-                        <a href="#"><i className="fa fa-instagram"></i></a>
-                        <a href="#"><i className="fa fa-linkedin"></i></a>
+                        <Link to="#"><FontAwesomeIcon icon={faFacebook} /></Link>
+                        <Link to="#"><FontAwesomeIcon icon={faInstagram} /></Link>
+                        <Link to="#"><FontAwesomeIcon icon={faTwitter} /></Link>
+                        <Link to="https://www.linkedin.com/in/siva-sankar-sahoo-6b648a23a"><FontAwesomeIcon icon={faLinkedin} /></Link>
                     </div>
                 </div>
             </div>

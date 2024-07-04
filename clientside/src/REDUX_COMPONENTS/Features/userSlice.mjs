@@ -58,7 +58,7 @@ const userSlice = createSlice({
             .addCase(getUser.fulfilled, (state, action) => {
                 const { status, message } = action.payload;
                 state.data = message.user;
-                state.post = message.post;
+                state.post = message.post.posts;
                 state.status = status ? statusCode.IDLE : statusCode.EMPTY;
             })
             .addCase(getUser.pending, (state, action) => {

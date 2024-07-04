@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { addUser, userPost } from "../REDUX_COMPONENTS/Features/userSlice.mjs";
 import { Link, useNavigate } from "react-router-dom";
 import "../CSS/login.css"
+import { toast } from "react-toastify";
 
 const Login = () => {
     const [mail, setMail] = useState()
@@ -22,12 +23,12 @@ const Login = () => {
                     dispatch(userPost({ _id: message.user._id, posts: message.post.posts }))
                     navigate("/")
                 } else {
-                    window.alert(message)
+                    toast(message)
                 }
             })
             .catch(err => {
                 console.error(`Login error --> ${err}`)
-                window.alert("Network connection error")
+                toast("Network connection error")
             })
     }
 
